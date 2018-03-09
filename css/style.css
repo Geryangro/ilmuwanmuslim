@@ -447,7 +447,7 @@ button.scroll-btn-css:focus, button.scroll-btn-css-time:focus {
   outline:0;
 }
 .background-fixed-1 {
-  background-image: url('../image/abbas/Background atas.jpg');
+  background-image: url('../image/abbas/Background atas-min.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -637,7 +637,7 @@ img.img-abbas-timeline {
   color: #ffffff;
 }
 .background-fixed-2 {
-  background-image: url('../image/abbas/Background bawah.jpg');
+  background-image: url('../image/abbas/Background bawah-min.jpg');
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
