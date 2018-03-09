@@ -1382,6 +1382,13 @@ button.description:focus {
   .phone_view {
     display: block;
   }
+  .menu_logo_phone {
+    margin-top: 8px;
+  }
+  .logo-arrow-down {
+    float: right;
+    height: 12px;
+  }
   .header {
     position: static;
   }
@@ -1468,7 +1475,7 @@ button.description:focus {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 280px;
+    height: 315px;
     padding: 0px 20px;
     margin-left: 0;
   }
