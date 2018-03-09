@@ -486,6 +486,7 @@ p.text-ebook {
   box-shadow: 3px 4px 5px rgba(0, 0, 0, 0.5);
   width: 100%;
   margin: 10px 0px;
+  font-family: "roboto";
 }
 .ebook-input:focus {
   outline: none;
@@ -1370,6 +1371,9 @@ video::-webkit-media-controls {
 .thank_you p {
   font-size: 18px;
 }
+button.description:focus {
+  outline: none;
+}
 @media screen and (max-width: 768px){
   .desktop_view {
     display: none;
@@ -1499,7 +1503,16 @@ video::-webkit-media-controls {
   }
   p.content-product-description {
     font-size: 18px;
-    padding: 20px;
+    padding: 20px 0px;
+  }
+  button.description {
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
   }
   button.btn-buy {
     font-size: 16px;
@@ -1518,7 +1531,7 @@ video::-webkit-media-controls {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 530px;
+    height: 580px;
     padding: 0px 20px;
     margin-left: 0;
   }
@@ -1534,7 +1547,7 @@ video::-webkit-media-controls {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 530px;
+    height: 580px;
     padding: 0px 20px;
     margin-left: 0;
   }
@@ -1543,7 +1556,7 @@ video::-webkit-media-controls {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 600px;
+    height: 650px;
     padding: 0px 20px;
     margin-left: 0;
   }
