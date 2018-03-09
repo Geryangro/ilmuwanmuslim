@@ -22,7 +22,7 @@
         </div>
         <div>
           <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="home.html" class="white-text text-light text-sans">Beranda</a></li>
+            <li class=""><a href="index.html" class="white-text text-light text-sans">Beranda</a></li>
             <li class="dropdown-submenu"><a href="#" class="white-text text-light text-sans">Ilmuwan Muslim <span class="caret"></span> </a>
               <ul class="dropdown-menu multi-level nomargin nopadding">
                 <li><a class="text-sans" href="abbas.html">Abbas Bbin Firnas</a></li>
@@ -65,7 +65,7 @@
               </div>
               <div class="col-list-menu_phone">
                 <ul class="list-menu">
-                  <li class=""><a href="home.html" class="text-light text-roboto">Beranda</a></li>
+                  <li class=""><a href="index.html" class="text-light text-roboto">Beranda</a></li>
                   <li class="">
                     <a class="text-light text-roboto open-submenu">
                       <p class="nomargin text-roboto">Ilmuwan Muslim <i class="fas fa-caret-down caret-down-icon"></i></p>
@@ -295,11 +295,11 @@
                     <input type="hidden" name="campaign_token" value="4doA4" />
                   </form>
                 </div>
-                <button id="dwnldEbook" class="btn-ebook" type="button" name="button">Download</button>
-                <a id="ebook_jabir" href="" download="image/ebook lubna.pdf"></a>
                 <div class="thank_you">
                   <p>Terima kasih untuk mendownload ebook lubna, Tolong cek email Ayah/Bunda untuk mendapatkan ebook series ilmuwan muslim selanjutanya</p>
                 </div>
+                <button id="dwnldEbook" class="btn-ebook" type="button" name="button">Download</button>
+                <a id="ebook_jabir" href="" download="image/ebook lubna.pdf"></a>
               </div>
               <div class="col-md-2">
 
@@ -338,10 +338,10 @@
               <div class="clearfix"></div>
               <div class="">
                 <ul class="menu-footer">
-                  <a href="home.html"></a> <li class="text-sans">Beranda</li>
-                  <li class="text-sans">Ilmuwan Muslim</li>
-                  <li class="text-sans">Produk</li>
-                  <li class="text-sans">Info Desa Quran</li>
+                  <a class="white-text" style="text-decoration: none;" href="index.html"><li class="text-sans">Beranda</li></a>
+                  <a class="white-text" style="text-decoration: none;" href="abbas.html"><li class="text-sans">Ilmuwan Muslim</li></a>
+                  <a class="white-text" style="text-decoration: none;" href="produk.html"><li class="text-sans">Produk</li></a>
+                  <a class="white-text" style="text-decoration: none;" href="dq.html"><li class="text-sans">Info Desa Quran</li></a>
                   <li class="text-sans">Telpon: +62 21-7657161</li>
                 </ul>
               </div>
@@ -399,6 +399,26 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/slick/slick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    function validateEmail(email) {
+      var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+      return re.test(email);
+    }
+    $("#dwnldEbook").click(function(e){
+      var nameFilter = /^([a-zA-Z \t]{3,15})+$/;
+      var nameSubcribe = $("#subscribe-name").val();
+      var $email = $("#subscribe-email").val();
+      if(validateEmail($email) && nameFilter.test(nameSubcribe)){
+        $('#ebook_jabir')[0].click();
+        $(".form_download").fadeOut(700, function(){
+          $(".thank_you").fadeIn(700);
+        });
+      } else {
+        $('#subscribe-name').attr('placeholder','nama tidak boleh kosong');
+        $('#subscribe-email').attr('placeholder','email tidak boleh kosong');
+      }
+    });
+    </script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#open-sidebar').click(function(){
