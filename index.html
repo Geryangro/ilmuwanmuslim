@@ -6,13 +6,30 @@
   <meta name="viewport" content="width=device-width , initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="image/Favicon.png">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css?ver=1.3">
+  <link rel="stylesheet" href="css/style.css?ver=1.3.1">
   <link rel="stylesheet" href="animate/animate.min.css">
   <link rel="stylesheet" href="animate/animate.css">
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="waypoint/lib/jquery.waypoints.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script>
+  	!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  	n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  	n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  	t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  	document,'script','//connect.facebook.net/en_US/fbevents.js');
 
+  	fbq('init', '1914679778758190');
+  	fbq('init', '129872324370688');
+  	fbq('track', "ViewContent");
+    fbq('track', "PageView");
+  </script>
+  	<noscript><img height="1" width="1" style="display:none"
+  	src="https://www.facebook.com/tr?id=1914679778758190&ev=PageView&noscript=1"
+  	/></noscript>
+  	<noscript><img height="1" width="1" style="display:none"
+  	src="https://www.facebook.com/tr?id=129872324370688&ev=PageView&noscript=1"
+  	/></noscript>
 </head>
 
 <body>
@@ -27,7 +44,7 @@
         </div>
         <div>
           <ul class="nav navbar-nav navbar-right">
-            <li class=""><a href="#" class="white-text text-light text-sans">Beranda</a></li>
+            <li onclick="track('ilmuwanmuslim','click','content')" class=""><a href="#" class="white-text text-light text-sans">Beranda</a></li>
             <li class="dropdown-submenu"><a href="#" class="white-text text-light text-sans">Ilmuwan Muslim <span class="caret"></span> </a>
               <ul class="dropdown-menu multi-level nomargin nopadding">
                 <li><a class="text-sans" href="abbas.html">Abbas Bin Firnas</a></li>
@@ -142,7 +159,7 @@
                   <div class="thank_you">
                     <p class="white-text">Terima kasih untuk mendownload ebook lubna, Tolong cek email Ayah/Bunda untuk mendapatkan ebook series ilmuwan muslim selanjutanya</p>
                   </div>
-                  <button id="dwnldEbook" class="btn-ebook" type="submit" name="button">Download</button>
+                  <button id="dwnldEbook" class="btn-ebook" type="submit" name="button">DAPATKAN SEKARANG</button>
                   <a id="ebook_jabir" href="" download="image/ebook lubna.pdf"></a>
                 </form>
               </div>
@@ -313,6 +330,16 @@
     </div>
   </footer>
 </body>
+<script type="text/javascript">
+function track(category, action, label, value){
+  if (typeof value != 'undefined'){
+    ga('send', 'event', category, action, label, value);
+  } else {
+    ga('send', 'event', category, action, label);
+  }
+  fbq('trackCustom', category+"-"+action+"-"+label);
+}
+</script>
 <script type="text/javascript">
 $(document).ready(function(){
   $('#open-sidebar').click(function(){
