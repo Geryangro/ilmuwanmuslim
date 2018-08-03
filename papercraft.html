@@ -90,25 +90,41 @@
         </nav>
     </header>
 
-    <div class="thank_page col-md-12 col-xs-12 nopadding">
-      <div class="col-md-10 col-md-offset-1 col-xs-12 nopadding">
+    
+    <div class="clearfix"></div>
+    <div class="col_paperCraft">
+      <div class="row nomargin">
         <div class="col-md-6 col-xs-12">
-          <img class="center-block icon-seru desktop_view" src="image/icon.png" alt="">
-          <p class="text-ebook-download white-text">Terima kasih Anda sudah mensubscribe ilmuwanmuslim.com,
-            Untuk mendapatkan ebook parenting Tolong cek <a href="https://mail.google.com" style="color: #FCD94D;">email</a>
-            Ayah/Bunda dan kami akan mengirimkan series ebook parenting Ilmuwan muslim berikutnya</p>
+            <img class="phone_view craft_title center-block img-responsive" src="image/papercraft/title.png"  alt="">
+          <img class=" craft center-block img-responsive" src="image/papercraft/Paper.png"  alt="">
         </div>
-        <div class="col-md-6 col-xs-12">
-          <img class="center-block ebook-phone-download desktop_view" src="image/ebook_phone.png" alt="">
+        <div class="col-md-6 col-xs-12 papercraft-col">
+          <img class="desktop_view craft_title center-block img-responsive" src="image/papercraft/title.png"  alt="">
+          <div class="col-paper_text">
+              <p class="text-whale white-text title-craft"><span class="yellow-text-color">GRATIS</span> untuk Ayah dan Bunda. <br> 
+                Untuk mendapatkan Paper Craft <br> kami, isi form dulu ya Ayah/Bunda
+              </p>
+              <div class="col-md-12 col-xs-12">
+                  <form action="" accept-charset="utf-8" method="post">
+                    <div class="form_download">
+                      <input id="subscribe-name" class="ebook-input" type="text" name="name"  placeholder="masukan nama" required>
+                      <input id="subscribe-telp" class="ebook-input" type="text" name="notlp" minlength="11" maxlength="13" pattern = "[0-9]" placeholder="masukan No.Telp" required>
+                      <input id="subscribe-email" class="ebook-input" type="text" name="email" placeholder="masukan email" required>
+                      <input type="hidden" name="campaign_token" value="4doA4" />
+                    </div>
+                    <div class="thank_you">
+                      <p class="white-text thankyouText">Klik <button id="dwnldPaper" class="download-paper">DOWNLOAD</button> <a id="papercraft_jpg" href="" download="image/papercraft/Papercraft.jpg"></a> 
+                        Untuk mendapatkan <br>
+                        PaperCraft nya Ayah/bunda</p>
+                    </div>
+                    <button id="dwnldEbook" class="btn-ebook" type="submit" name="button">DAPATKAN SEKARANG</button>
+                  </form>
+              </div>
+          </div>
         </div>
-      </div>
-      <div class="clearfix"></div>
-      <div class="col-xs-12">
-        <img class="center-block ebook_phone_view phone_view" src="image/phoneebook.png" alt="">
       </div>
     </div>
     <div class="clearfix"></div>
-
     <footer class="desktop_view">
       <div class="footer-col">
         <div class="container">
@@ -194,6 +210,7 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/slick/slick.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('#open-sidebar').click(function(){
@@ -212,6 +229,42 @@
       $('.open-submenu').click(function() {
           $(this).siblings('.submenu').slideToggle('500');
       });
+    </script>
+    <script>
+      function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+      }
+      function validateNumber(phone) {
+        var tes = /\d{11,13}/;
+        return tes.test(phone);
+      }
+      $("#dwnldEbook").click(function(e){
+        var nameFilter = /^([a-zA-Z \t]{3,15})+$/;
+        var nameSubcribe = $("#subscribe-name").val();
+        var notelp = $("#subscribe-telp").val();
+        var $email = $("#subscribe-email").val();
+        if(validateEmail($email) && validateNumber(notelp) && nameFilter.test(nameSubcribe)){
+          $(".form_download").fadeOut(700, function(){
+            axios.get('https://hooks.zapier.com/hooks/catch/3605144/gizbqm/?name='+ nameSubcribe +'&email='+ $email +'&telp='+ notelp +'&date='+ Date.now())
+            .then(function (response) {
+              $(".thank_you").fadeIn(700);
+              $("#dwnldEbook").hide();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+            
+          });
+        } else {
+          $('#subscribe-name').attr('placeholder','nama tidak boleh kosong');
+          $('#subscribe-telp').attr('placeholder','nomor tidak boleh kosong');
+          $('#subscribe-email').attr('placeholder','email tidak boleh kosong');
+        }
+      });
+      $("#dwnldPaper").click(function(){
+        $('#papercraft_jpg')[0].click();
+      })
     </script>
     <script type="text/javascript">
       $(document).ready(function(){

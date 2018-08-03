@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width , initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/png" href="image/Favicon.png">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/style.css?ver=1.3.2">
+  <link rel="stylesheet" href="css/style.css?ver=1.3.3">
   <link rel="stylesheet" href="animate/animate.min.css">
   <link rel="stylesheet" href="animate/animate.css">
   <script src="js/jquery-3.2.1.min.js"></script>
@@ -54,6 +54,7 @@
             </li>
             <li><a href="produk.html" class="text-sans white-text text-light">Produk</a></li>
             <li><a href="dq.html" class="text-sans white-text text-light">Info Desa Quran</a></li>
+            <li><a href="papercraft.html" class="text-sans white-text text-light">PaperCraft</a></li>
           </ul>
         </div>
       </nav>
@@ -103,6 +104,7 @@
               </li>
               <li class="black-text"><a href="produk.html" class="text-roboto text-light">Produk</a></li>
               <li class="black-text"><a href="dq.html" class="text-roboto text-light">Info Desa Quran</a></li>
+              <li class="black-text"><a href="papercraft.html" class="text-roboto text-light">PaperCraft</a></li>
             </ul>
           </div>
         </div>
@@ -295,6 +297,7 @@
                 <a class="white-text" style="text-decoration: none;" href="abbas.html"><li class="text-sans">Ilmuwan Muslim</li></a>
                 <a class="white-text" style="text-decoration: none;" href="produk.html"><li class="text-sans">Produk</li></a>
                 <a class="white-text" style="text-decoration: none;" href="dq.html"><li class="text-sans">Info Desa Quran</li></a>
+                <a class="white-text" style="text-decoration: none;" href="papercraft.html"><li class="text-sans">PaperCraft</li></a>
                 <li class="text-sans">Telpon: +62 21-7657161</li>
               </ul>
             </div>
@@ -388,6 +391,7 @@ $("#dwnldEbook").click(function(e){
   var nameSubcribe = $("#subscribe-name").val();
   var $email = $("#subscribe-email").val();
   if(validateEmail($email) && nameFilter.test(nameSubcribe)){
+    $('#ebook_jabir')[0].click();
     $(".form_download").fadeOut(700, function(){
       $(".thank_you").fadeIn(700);
     });
