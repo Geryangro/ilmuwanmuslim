@@ -113,15 +113,23 @@
                       <input type="hidden" name="campaign_token" value="4doA4" />
                     </div>
                     <div class="thank_you">
-                      <p class="white-text thankyouText">Klik <button id="dwnldPaper" class="download-paper">DOWNLOAD</button> <a id="papercraft_jpg" href="image/papercraft/Papercraft.jpg" download="Papercraft.jpg"></a> 
-                        Untuk mendapatkan PaperCraft nya Ayah/bunda terima kasih <span class="text-sans">&</span> Nantikan kejutan selanjutnya yang
-                        lebih keren dari wayang ilmuwan muslim.</p>
+                      <p class="white-text thankyouText">Klik <button id="dwnldPaper" class="download-paper">DOWNLOAD</button> <a id="papercraft_jpg" href="image/papercraft/Papercraft.jpg" download="wayang_ilmuwan.jpg"></a> 
+                        Untuk mendapatkan PaperCraft nya Ayah/bunda </p>
                     </div>
                     <button id="dwnldEbook" class="btn-ebook" type="submit" name="button">DAPATKAN SEKARANG</button>
                   </form>
               </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div id="thankPop" class="popupThanks" style="background: rgba(0, 0, 0, 0.7);"> 
+      <div class="col_popupThanks">
+        <p class="text-thank">Terima kasih sudah mendownload <br> 
+          <span class="brown-text">WAYANG ILMUWAN MUSLIM</span> <br>
+          nantikan kejutan selanjutnya <br> yang lebih keren. <br>
+          Pantau terus infonya ya di akun Instagram <a href="https://www.instagram.com/afrakidsproduct/"><span class="brown-text">@AFRAKIDSPRODUCT.</span></a>  
+        </p>
       </div>
     </div>
     <div class="clearfix"></div>
@@ -263,71 +271,16 @@
         }
       });
       $("#dwnldPaper").click(function(){
+        $('#thankPop').show();
         $('#papercraft_jpg')[0].click();
-      })
+      });
+      $('#thankPop').click(function(e){
+        if ( e.target == this ) {
+          if ($('#thankPop').is(':visible')) {
+                $('#thankPop').hide();
+          }
+        }
+      });
     </script>
-    <script type="text/javascript">
-      $(document).ready(function(){
-    		$('.hover').hover(function(){
-    			$(this).addClass('flip');
-    		},function(){
-    			$(this).removeClass('flip');
-    		});
-  	  });
-      $(document).ready(function (){
-        $("#right-arrow").click(function(){
-          $("#left-arrow").css("display","block");
-          $("#right-arrow").css("display","none");
-        });
-      });
-      // function noscroll() {
-      //   window.scrollTo( 0, 0 );
-      // }
-      // window.addEventListener('scroll', noscroll);
-      $(document).ready(function (){
-        $('.center').slick({
-          centerMode: true,
-          centerPadding: '10px',
-          slidesToShow: 3,
-        });
-      });
-      $(document).ready(function (){
-        $("#scroll-down-js").click(function (){
-            $('html, body').animate({
-                scrollTop: $(".part-one-story").offset().top
-            }, 2000);
-        // window.removeEventListener('scroll', noscroll);
-        });
-      });
-      ( function() {
-
-        var youtube = document.querySelectorAll( ".youtube" );
-
-        for (var i = 0; i < youtube.length; i++) {
-
-          var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
-
-          var image = new Image();
-          image.src = source;
-          image.addEventListener( "load", function() {
-            youtube[ i ].appendChild( image );
-          }( i ) );
-
-          youtube[i].addEventListener( "click", function() {
-
-            var iframe = document.createElement( "iframe" );
-
-              iframe.setAttribute( "frameborder", "0" );
-              iframe.setAttribute( "allowfullscreen", "" );
-              iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
-
-              this.innerHTML = "";
-              this.appendChild( iframe );
-            } );
-          };
-
-        } )();
-    </script>
-
   </body>
 </html>
